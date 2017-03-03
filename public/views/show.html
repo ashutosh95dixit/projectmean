@@ -1,0 +1,32 @@
+<div class="jumbotron text-center" ng-app=".">
+    <h1>Show Timing</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Show</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td><input ng-model="show.showName" /></td>
+
+                        <td><button ng-click="addShow(show)" class="btn btn-primary">Add </button></td>
+                        <td><button ng-click="updateShow(show)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat=" show in showList">
+                        <td>{{show.showName}}</td>
+
+                        <td><button ng-click="removeShow(show)" class="btn btn-danger">Remove</button></td>
+                        <td><button ng-click="editShow(show)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>

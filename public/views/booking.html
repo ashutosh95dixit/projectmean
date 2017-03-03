@@ -1,0 +1,62 @@
+<div class="jumbotron text-center" ng-app="">
+    <h1>Assign Movies Here</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Theatre Name</th>
+                        <th>City Name</th>
+                        <th>Movie Name</th>
+                        <th>Show</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                      <td><select ng-model="booking.theatre">
+                                                   <option ng-repeat="theatre in theatreList" ng-value ="theatre.theatreName">
+                                                       {{theatre.theatreName}}
+                                                   </option>
+                      </select></td>
+
+                        <td><select ng-model="booking.city">
+                                                     <option ng-repeat="city in cityList" ng-value ="city.cityName">
+                                                         {{city.cityName}}
+                                                     </option>
+                        </select></td>
+
+                        <td><select ng-model="booking.movi">
+                                                     <option ng-repeat="movi in moviList" ng-value ="movi.moviTitle">
+                                                         {{movi.moviTitle}}
+                                                     </option>
+                        </select></td>
+
+                        <td><select ng-model="booking.showNa">
+                                                     <option ng-repeat="show in showList" ng-value ="show.showName">
+                                                         {{show.showName}}
+                                                     </option>
+                        </select></td>
+                        <td><button ng-click="addBooking(booking)" class="btn btn-primary">Add </button>
+                        </td>
+
+                        <td><button ng-click="updateBooking(booking)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat="booking in bookingList">
+                      <td>{{booking.theatreName}}</td>
+                      <td>{{booking.cityName}}</td>
+                      <td>{{booking.moviTitle}}</td>
+                      <td>{{booking.showName}}</td>
+
+                      <td><button ng-click="removeBooking(booking)" class="btn btn-danger">Remove</button></td>
+                      <td><button ng-click="editBooking(booking)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
